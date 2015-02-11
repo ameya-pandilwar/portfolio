@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFBB33"
+              android:gravity="center"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="10dp"
+        android:text="Bananagrams"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"/>
+
+    <Button
+        android:id="@+id/activity_two_player_bananagrams_menu_new_single_game"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_tile"
+        android:text="New Single Player Game"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/activity_two_player_bananagrams_menu_new_two_game"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_tile2"
+        android:text="New Two Player Game"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/activity_two_player_bananagrams_menu_high_score"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_tile"
+        android:text="Display High Scores"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/activity_two_player_bananagrams_acknowledgement"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_tile1"
+        android:text="Acknowledgements"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/activity_two_player_bananagrams_quit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_selected"
+        android:text="Quit"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

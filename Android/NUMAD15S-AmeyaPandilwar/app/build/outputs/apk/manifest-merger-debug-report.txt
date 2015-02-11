@@ -1,0 +1,66 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:10:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:10:11
+	package
+		ADDED from AndroidManifest.xml:11:7
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:13:7
+	android:versionCode
+		ADDED from AndroidManifest.xml:12:7
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+application
+ADDED from AndroidManifest.xml:14:5
+	android:label
+		ADDED from AndroidManifest.xml:15:11
+	android:icon
+		ADDED from AndroidManifest.xml:14:18
+activity#edu.neu.madcourse.ameyapandilwar.sudoku.Sudoku
+ADDED from AndroidManifest.xml:16:9
+	android:label
+		ADDED from AndroidManifest.xml:17:15
+	android:name
+		ADDED from AndroidManifest.xml:16:19
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:18:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:19:17
+	android:name
+		ADDED from AndroidManifest.xml:19:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:20:17
+	android:name
+		ADDED from AndroidManifest.xml:20:27
+activity#edu.neu.madcourse.ameyapandilwar.sudoku.About
+ADDED from AndroidManifest.xml:24:9
+	android:label
+		ADDED from AndroidManifest.xml:25:15
+	android:theme
+		ADDED from AndroidManifest.xml:26:15
+	android:name
+		ADDED from AndroidManifest.xml:24:19
+activity#edu.neu.madcourse.ameyapandilwar.sudoku.Prefs
+ADDED from AndroidManifest.xml:30:9
+	android:label
+		ADDED from AndroidManifest.xml:31:15
+	android:name
+		ADDED from AndroidManifest.xml:30:19
+activity#edu.neu.madcourse.ameyapandilwar.sudoku.Game
+ADDED from AndroidManifest.xml:35:9
+	android:label
+		ADDED from AndroidManifest.xml:36:15
+	android:name
+		ADDED from AndroidManifest.xml:35:19
+uses-sdk
+ADDED from AndroidManifest.xml:39:5
+	android:targetSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:39:15
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0

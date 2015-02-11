@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="@drawable/custom_background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voice Main Menu"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/addEntryUsingVoice"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="onClickAddEntryUsingVoice"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_tile2"
+        android:text="Add Entry Using Voice" />
+
+    <Button
+        android:id="@+id/configureVoiceCommands"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dip"
+        android:onClick="onClickConfigureVoiceCommands"
+        android:background="@drawable/custom_tile2"
+        android:text="Configure Voice Commands" />
+    
+    <Button
+        android:id="@+id/viewEntries"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dip"
+        android:onClick="onClickViewEntries"
+        android:background="@drawable/custom_tile2"
+        android:text="View Entries" />
+
+</LinearLayout>

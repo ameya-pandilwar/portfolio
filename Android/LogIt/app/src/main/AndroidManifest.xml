@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- suppress AndroidDomInspection -->
+<manifest
+    package="edu.neu.madcourse.dharammaniar"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="edu.neu.madcourse.dharammaniar.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+    <permission
+        android:name="edu.neu.madcourse.dharammaniar.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black">
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Logit -->
+
+        <receiver android:name=".logit.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".logit.MinuteService"/>
+
+        <service android:name=".logit.ListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.logit.LogItSplashScreen"
+            android:exported="true"
+            android:icon="@drawable/icon"
+            android:label="MAD14F-LogIt"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".logit.LogItWearConnectivityTutorialScreen"
+            android:label="LogIt"
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItWearQuestionTutorialScreen"
+            android:label="LogIt"
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItWearVoiceTutorialScreen"
+            android:label="LogIt"
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItMainScreen"
+            android:label="LogIt - Main Screen"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItManageActivitiesScreen"
+            android:label="LogIt - View Activities"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItSetupDefaultActivitiesScreen"
+            android:label="LogIt - Setup Default Activities"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItLogsScreen"
+            android:label="LogIt - Logs"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItViewChartsScreen"
+            android:label="LogIt - View Charts"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItAddNewDefaultActivityScreen"
+            android:label="LogIt - Add New Default Activity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItRecordManualEntryScreen"
+            android:label="LogIt - Record Manual Entry"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItEditEntryScreen"
+            android:label="LogIt - Edit Entry"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItDeleteEntryScreen"
+            android:label="LogIt - Delete Entry"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItExportToCSVScreen"
+            android:label="LogIt - Export To CSV"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".logit.LogItAcknowledgements"
+            android:label="LogIt - Acknowledgements"
+            android:screenOrientation="portrait"/>
+
+        <!-- App -->
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.about.AboutActivity"
+            android:label="About">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.sudoku.SudokuMainActivity"
+            android:label="Sudoku">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.sudoku.SodukuAboutActivity"
+            android:label="@string/about_title"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.sudoku.SudokuPrefActivity"
+            android:label="@string/settings_title">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.sudoku.SudokuGameActivity"
+            android:label="@string/game_title"/>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.dictionary.DictionaryActivity"
+            android:label="Test Dictionary"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.bananagrams.BananagramsGridActivity"
+            android:label="Bananagrams"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.bananagrams.BananagramsMainActivity"
+            android:label="Bananagrams"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.bananagrams.BananagramsAck"
+            android:label="Bananagrams"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.communication.RegistrationActivity"
+            android:label="Registration"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.communication.CommunicationActivity"
+            android:label="Communication"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.communication.FindUserActivity"
+            android:label="FindUserActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.communication.EnterScoreActivity"
+            android:label="EnterScoreActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.communication.DisplayScores"
+            android:label="DisplayScores"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.communication.Acknowledgement"
+            android:label="Acknowledgement"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <receiver
+            android:name="edu.neu.madcourse.dharammaniar.communication.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+
+                <category android:name="com.example.gcm"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name="edu.neu.madcourse.dharammaniar.communication.GcmIntentService"/>
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.twoplayerbananagrams.TwoPlayerBananagramsMenu"
+            android:label="Two Player Word Game Menu"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.twoplayerbananagrams.TwoPlayerBananagramsRegistration"
+            android:label="Two Player Word Game Registration"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.twoplayerbananagrams.TwoPlayerBananagramsFindFriends"
+            android:label="Two Player Word Game Find Friends"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.twoplayerbananagrams.TwoPlayerBananagramsGame"
+            android:label="Two Player Word Game"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.twoplayerbananagrams.TwoPlayerBananagramsDisplayScores"
+            android:label="Two Player Word Game"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.twoplayerbananagrams.TwoPlayerBananagramsAck"
+            android:label="Two Player Word Game"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.TrickiestPart"
+            android:exported="true"
+            android:label="Trickiest Part"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".trickiestpart.wear.Wear"
+            android:label="Wear"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Voice Module : BEGINS -->
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.voice.VoiceModuleMainMenu"
+            android:label="Voice Main Menu"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.voice.ConfigureActivityVoiceCommandActivity"
+            android:label="Configure Voice Commands"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".trickiestpart.voice.DefaultVoiceCommandsActivity"
+            android:label="Default Voice Command"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.voice.ViewEntriesActivity"
+            android:label="View Entries"
+            android:screenOrientation="portrait"/>
+
+        <!-- Voice Module : ENDS -->
+
+
+        <!-- Time Module : BEGINS -->
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.time.TimeModuleMainMenu"
+            android:label="Time Main Menu"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.time.DefaultTimeBasedActivity"
+            android:label="Time Based Activities"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.time.ConfigureTimeBasedActivity"
+            android:label="Configure Time"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name="edu.neu.madcourse.dharammaniar.trickiestpart.time.TimeBasedService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <!-- Time Module : ENDS -->
+
+        <activity
+            android:name=".trickiestpart.location.LocationActivity"
+            android:label="Location"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+        <service
+            android:name=".trickiestpart.wear.WearListenerService"
+            android:enabled="true">
+
+        </service>
+
+        <service android:name=".trickiestpart.location.MinuteService"/>
+
+        <activity
+            android:name=".logit.FinalProject"
+            android:label="Final Project"
+            android:screenOrientation="portrait"/>
+
+    </application>
+
+</manifest>

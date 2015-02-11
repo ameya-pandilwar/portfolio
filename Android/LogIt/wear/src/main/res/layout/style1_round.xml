@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layout1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/watch_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="edu.neu.android.wear.MainActivity">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:ellipsize="start"
+        android:gravity="center_horizontal|bottom"
+        android:maxLines="2"
+        android:text="Question"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/answer1"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/custom_button"
+        android:ellipsize="start"
+        android:maxLines="2"
+        android:text="Answer1"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/answer2"
+        android:layout_width="180dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/custom_button"
+        android:ellipsize="start"
+        android:maxLines="2"
+        android:text="Answer2"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/answer3"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/custom_button"
+        android:ellipsize="start"
+        android:gravity="center_horizontal"
+        android:maxLines="2"
+        android:paddingTop="5dp"
+        android:text="Answer3"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
+</LinearLayout>

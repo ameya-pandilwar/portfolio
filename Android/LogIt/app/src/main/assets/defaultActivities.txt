@@ -1,0 +1,325 @@
+Family and Friends,bathing,,cat
+Family and Friends,bathing,,child
+Family and Friends,bathing,,children
+Family and Friends,bathing,,daughter
+Family and Friends,bathing,,dog
+Family and Friends,bathing,,son
+Family and Friends,caring,,
+Family and Friends,carrying,,child
+Family and Friends,changing,,diaper
+Family and Friends,conversing,,
+Family and Friends,dressing,,child
+Family and Friends,dressing,,children
+Family and Friends,feeding,,cat
+Family and Friends,feeding,,child
+Family and Friends,feeding,,children
+Family and Friends,feeding,,dog
+Family and Friends,grooming,,child
+Family and Friends,grooming,,children
+Family and Friends,playing,with,cat
+Family and Friends,playing,with,child
+Family and Friends,playing,with,children
+Family and Friends,playing,with,dog
+Family and Friends,talking,on a,call
+Household Chores,baking,,
+Household Chores,boiling,,
+Household Chores,buffing,the,floor
+Household Chores,building,,fence
+Household Chores,buying,,food
+Household Chores,buying,,groceries
+Household Chores,carrying,out,trash
+Household Chores,carrying,,boxes
+Household Chores,carrying,,groceries
+Household Chores,changing,,light bulb
+Household Chores,chopping,,
+Household Chores,cleaning,,cabin
+Household Chores,cleaning,,garage
+Household Chores,cleaning,,house
+Household Chores,cleaning,,sink
+Household Chores,cleaning,,toilet
+Household Chores,cleaning,,
+Household Chores,clearing,,tables
+Household Chores,clearing,,
+Household Chores,cooking,,breakfast
+Household Chores,cooking,,dinner
+Household Chores,cooking,,lunch
+Household Chores,cooking,,snacks
+Household Chores,cooking,,
+Household Chores,cutting,,fruits
+Household Chores,cutting,,vegetables
+Household Chores,cutting,,
+Household Chores,dicing,,
+Household Chores,doing,,housework
+Household Chores,doing,,laundry
+Household Chores,drying,,clothes
+Household Chores,drying,,
+Household Chores,dusting,,
+Household Chores,excavating,,garage
+Household Chores,excavating,,
+Household Chores,folding,,clothes
+Household Chores,folding,,
+Household Chores,frying,,
+Household Chores,gardening,,
+Household Chores,gathering,,clothes
+Household Chores,hanging,,clothes
+Household Chores,hanging,,storm windows
+Household Chores,ironing,,
+Household Chores,knitting,,
+Household Chores,laying,,carpet
+Household Chores,laying,,linoleum
+Household Chores,laying,,tile
+Household Chores,making,,bed
+Household Chores,mopping,,
+Household Chores,moving,,furniture
+Household Chores,mowing,,lawn
+Household Chores,mowing,,
+Household Chores,operating,,snow blower
+Household Chores,packing,,bag
+Household Chores,packing,,boxes
+Household Chores,packing,,suitcase
+Household Chores,packing,,
+Household Chores,painting,,
+Household Chores,papering,,
+Household Chores,paying,,bills
+Household Chores,planting,,trees
+Household Chores,plastering,,
+Household Chores,plumbing,,
+Household Chores,preparing,,breakfast
+Household Chores,preparing,,dinner
+Household Chores,preparing,,lunch
+Household Chores,preparing,,snacks
+Household Chores,putting,away,clothes
+Household Chores,putting,away,laundry
+Household Chores,putting,,clothes in dryer
+Household Chores,putting,,clothes in washer
+Household Chores,raking,,lawn
+Household Chores,readying,,to leave
+Household Chores,remodeling,,
+Household Chores,removing,,carpet
+Household Chores,repairing,,car
+Household Chores,riding,,snow blower
+Household Chores,roofing,,
+Household Chores,sacking,,grass
+Household Chores,sanding,,floors
+Household Chores,scraping,,
+Household Chores,scrubbing,,bathroom
+Household Chores,scrubbing,,bathtub
+Household Chores,scrubbing,,floors
+Household Chores,searching,,
+Household Chores,serving,,breakfast
+Household Chores,serving,,dinner
+Household Chores,serving,,lunch
+Household Chores,serving,,snacks
+Household Chores,sewing,,sewing
+Household Chores,shopping,,groceries
+Household Chores,shopping,,
+Household Chores,shoveling,,snow
+Household Chores,slicing,,
+Household Chores,spreading,,
+Household Chores,sweeping,,carpet
+Household Chores,sweeping,,floors
+Household Chores,sweeping,,garage
+Household Chores,sweeping,,sidewalk
+Household Chores,sweeping,,
+Household Chores,trimming,,shrubs
+Household Chores,unpacking,,boxes
+Household Chores,vacuuming,,
+Household Chores,washing,,car
+Household Chores,washing,,clothes
+Household Chores,washing,,dishes
+Household Chores,washing,,windows
+Household Chores,watering,,lawn
+Household Chores,watering,,plants
+Household Chores,wiring,,
+Household Chores,wrapping,,presents
+Leisure,browsing,,internet
+Leisure,chatting,,
+Leisure,dancing,,
+Leisure,doing,,ballroom dancing
+Leisure,doing,,chacha
+Leisure,doing,,disco dancing
+Leisure,doing,,mambo
+Leisure,doing,,nothing
+Leisure,doing,,samba
+Leisure,doing,,tango
+Leisure,doing,,waltz
+Leisure,drawing,,drawing
+Leisure,drinking,,soda
+Leisure,drinking,,
+Leisure,fishing,,
+Leisure,gaming,,
+Leisure,getting,,ready for bed
+Leisure,hunting,,hunting
+Leisure,listening,,music
+Leisure,listening,,news
+Leisure,listening,,radio
+Leisure,lying down,,
+Leisure,meditating,,
+Leisure,playing,,accordion
+Leisure,playing,,board games
+Leisure,playing,,cards
+Leisure,playing,,cello
+Leisure,playing,,conducting
+Leisure,playing,,drums
+Leisure,playing,,flute
+Leisure,playing,,guitar
+Leisure,playing,,horn
+Leisure,playing,,piano
+Leisure,playing,,trombone
+Leisure,playing,,trumpet
+Leisure,playing,,video games
+Leisure,playing,,violin
+Leisure,playing,,
+Leisure,reading,,book
+Leisure,reading,,newspaper
+Leisure,reading,,
+Leisure,sitting,,
+Leisure,smoking,,
+Leisure,socializing,,
+Leisure,standing,in,line
+Leisure,talking,,
+Leisure,texting,,
+Leisure,watching,a,match
+Leisure,watching,,movie
+Leisure,watching,,tablet
+Leisure,watching,,television
+Leisure,watching,,tv
+Miscellaneous,doing,,bird watching
+Miscellaneous,helping,,
+Miscellaneous,pushing,a,wheelchair
+Necessities,bathing,,
+Necessities,brushing,,teeth
+Necessities,dressing,,
+Necessities,drinking,,water
+Necessities,eating,,breakfast
+Necessities,eating,,dinner
+Necessities,eating,,lunch
+Necessities,eating,,snacks
+Necessities,eating,,
+Necessities,gargling,,
+Necessities,grooming,,
+Necessities,having,,breakfast
+Necessities,having,,dinner
+Necessities,having,,lunch
+Necessities,having,,snacks
+Necessities,shaving,,
+Necessities,showering,,
+Necessities,snacking,,
+Necessities,styling,,hair
+Necessities,taking,,medication
+Necessities,taking,,medicines
+Necessities,toweling,off,
+Necessities,undressing,,
+Necessities,urinating,,
+Necessities,washing,,hands
+Necessities,washing,,
+Physical Exercise,backpacking,,
+Physical Exercise,bicycling,,
+Physical Exercise,bowling,,
+Physical Exercise,cycling,,
+Physical Exercise,doing,,aerobic exercise
+Physical Exercise,doing,,back exercise
+Physical Exercise,doing,,gymnastics
+Physical Exercise,doing,,jazzercise
+Physical Exercise,doing,,judo
+Physical Exercise,doing,,juggling
+Physical Exercise,doing,,jujitsu
+Physical Exercise,doing,,jumping jacks
+Physical Exercise,doing,,karate
+Physical Exercise,doing,,kick boxing
+Physical Exercise,doing,,pullups
+Physical Exercise,doing,,pushups
+Physical Exercise,doing,,rappelling
+Physical Exercise,doing,,rock climbing
+Physical Exercise,doing,,roller blading
+Physical Exercise,doing,,rope jumping
+Physical Exercise,doing,,situps
+Physical Exercise,doing,,skateboarding
+Physical Exercise,doing,,skating
+Physical Exercise,doing,,skydiving
+Physical Exercise,doing,,slimnastics
+Physical Exercise,doing,,tae kwan do
+Physical Exercise,doing,,water aerobics
+Physical Exercise,doing,,water calisthenics
+Physical Exercise,doing,,yoga
+Physical Exercise,hiking,,
+Physical Exercise,jogging,,
+Physical Exercise,jumping,,
+Physical Exercise,lifting,,weights
+Physical Exercise,playing,,archery
+Physical Exercise,playing,,badminton
+Physical Exercise,playing,,baseball
+Physical Exercise,playing,,basketball
+Physical Exercise,playing,,billiards
+Physical Exercise,playing,,boxing
+Physical Exercise,playing,,broomball
+Physical Exercise,playing,,cricket
+Physical Exercise,playing,,croquet
+Physical Exercise,playing,,darts
+Physical Exercise,playing,,football
+Physical Exercise,playing,,frisbee
+Physical Exercise,playing,,golf
+Physical Exercise,playing,,handball
+Physical Exercise,playing,,hockey
+Physical Exercise,playing,,kickball
+Physical Exercise,playing,,lacrosse
+Physical Exercise,playing,,paddleball
+Physical Exercise,playing,,ping pong
+Physical Exercise,playing,,polo
+Physical Exercise,playing,,racquetball
+Physical Exercise,playing,,rugby
+Physical Exercise,playing,,soccer
+Physical Exercise,playing,,softball
+Physical Exercise,playing,,squash
+Physical Exercise,playing,,table tennis
+Physical Exercise,playing,,tennis
+Physical Exercise,playing,,volleyball
+Physical Exercise,rowing,,
+Physical Exercise,running,on,treadmill
+Physical Exercise,running,,
+Physical Exercise,sprinting,,
+Physical Exercise,stretching,,
+Physical Exercise,strolling,,
+Physical Exercise,swimming,,
+Physical Exercise,unicycling,,
+Physical Exercise,walking,,
+Religious,attending,a,ceremony
+Religious,kneeling,in,church
+Religious,praying,,
+Religious,sitting,in,church
+Sleep,napping,,
+Sleep,sleeping,,
+Sleep,taking,a,nap
+Study,attending,,class
+Study,coding,,
+Study,doing,,assignment
+Study,reading,,notes
+Study,studying,,
+Study,working,on,project
+Travel,driving,a,car
+Travel,riding,in a,cab
+Travel,riding,on a ,bike
+Travel,riding,the,bus
+Travel,riding,the,subway
+Travel,riding,the,train
+Travel,riding,,motorcycle
+Travel,riding,,
+Travel,touring,,
+Travel,travelling,in a,bus
+Travel,travelling,in a,car
+Travel,travelling,in a,plane
+Travel,travelling,,
+Work,attending,a,conference call
+Work,attending,a,meeting
+Work,coding,,
+Work,interviewing,,
+Work,presenting,,
+Work,reading,,email
+Work,sending,,email
+Work,taking,,notes
+Work,talking,on the,phone
+Work,using,,computer
+Work,working,,
+Work,writing,,email
+Work,writing,,letter
+Work,writing,,
