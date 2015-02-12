@@ -95,7 +95,6 @@ def query_custom_stem(all_terms):
             if line.__contains__(" "):
                 line_term = line.split(" ")[0]
                 for term in all_terms:
-                    term = str(term)
                     if line_term == term and term_match[term] == 1:
                         terms.append(line.split(" ")[1].split("\n")[0])
                         term_match[term] = 0
@@ -106,3 +105,12 @@ def query_custom_stem(all_terms):
             terms.append(term)
 
     return terms
+
+
+def write_result_to_file(dictionary, query_no, output_file):
+    rank = 1
+    lines = []
+    for doc in sorted(dictionary.items(), key=lambda x: x[1], reverse=True)[:1000]:
+        lines.append(str(query_no) + ' Q0 ' + doc[0] + ' ' + str(rank) + ' ' + str(doc[1]) + ' Exp\n')
+        rank += 1
+    output_file.writelines(lines)

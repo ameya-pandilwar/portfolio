@@ -1,10 +1,10 @@
 __author__ = 'Ameya'
 
+import helper
 import constants
 from math import log
 from datetime import datetime
 from elasticsearch import Elasticsearch
-from helper import get_term_freq_all, get_all_terms, get_query, get_doc_stats, load_length_in_dic, query_custom_stem
 
 
 if __name__ == '__main__':
@@ -13,17 +13,17 @@ if __name__ == '__main__':
     doc_count = es.cat.indices(index=constants.INDEX_NAME).split()[5]
 
     unigram_lm_laplace_output = open(constants.OUTPUT_DIRECTORY + 'unigram-lm-laplace_results.txt', 'w')
-    avg_doc_len = get_doc_stats(constants.AVERAGE_DOC_LENGTH_IDENTIFIER, start)
-    dic = load_length_in_dic(start)
+    avg_doc_len = helper.get_doc_stats(constants.AVERAGE_DOC_LENGTH_IDENTIFIER, start)
+    dic = helper.load_length_in_dic(start)
 
     with open(constants.QUERIES_TEXT_FILE) as queries:
         for line in iter(queries):
             if line.__contains__("."):
-                query = get_query(line.lower())
+                query = helper.get_query(line.lower())
                 query_no = line.lower().split(".   ")[0]
 
-                all_terms = get_all_terms(query, start)
-                terms = query_custom_stem(all_terms)
+                all_terms = helper.get_all_terms(query, start)
+                terms = helper.query_custom_stem(all_terms)
 
                 dict_result = {}
 
@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 search_docs = []
                 for stem in terms:
                     term_freq = {}
-                    results = get_term_freq_all(es, stem, doc_count, 0.009)
+                    results = helper.get_term_freq_all(es, stem, doc_count, 0.009)
                     for doc in results['hits']['hits']:
                         doc_id = str(doc['_id'])
                         tf = int(doc['_score'])
@@ -54,17 +54,7 @@ if __name__ == '__main__':
 
                     dict_result[each_doc] = doc_score
 
-                if dict_result.__len__() > 1000:
-                    dict_unigram_lm_laplace_sorted = sorted(dict_result.items(), key=lambda x: x[1], reverse=True)[:1000]
-                else:
-                    dict_unigram_lm_laplace_sorted = sorted(dict_result.items(), key=lambda x: x[1], reverse=True)
-
-                rank = 1
-                files = []
-                for doc in dict_unigram_lm_laplace_sorted:
-                    files.append(str(query_no) + " Q0 " + doc[0] + " " + str(rank) + " " + str(doc[1]) + " Exp\n")
-                    rank += 1
-                unigram_lm_laplace_output.writelines(files)
+                helper.write_result_to_file(dict_result, query_no, unigram_lm_laplace_output)
 
     unigram_lm_laplace_output.close()
     print datetime.now() - start

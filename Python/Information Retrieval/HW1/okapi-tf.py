@@ -1,40 +1,37 @@
 __author__ = 'Ameya'
 
+import helper
 import constants
 from datetime import datetime
 from elasticsearch import Elasticsearch
-from helper import get_term_freq_all, get_all_terms, get_query, get_doc_stats, load_length_in_dic
 
 
 def stem_query_default_stemmer(all_qry_terms):
     set_of_terms = []
 
     term_match = {}
-    for term in all_qry_terms:
-        term_match[term] = 1
+    for stem_term in all_qry_terms:
+        term_match[stem_term] = 1
 
     with open(constants.STEM_CLASSES_FILE) as dictionary:
         for ln in dictionary:
             ln = ln.lower()
-            if ln.__contains__(" |  "):
-                if ln.split(" |  ")[1]:
-                    if ln.split(" |  ")[1].__contains__(" "):
-                        for one_term in ln.split(" |  ")[1].split(" "):
-                            one_term = str(one_term)
-                            for term in all_qry_terms:
-                                term = str(term)
-                                if one_term == term and term_match[term] == 1:
-                                    set_of_terms.append(ln.split(" |  ")[0])
-                                    term_match[term] = 0
-                                    break
-                        else:
-                            if ln.split(" |  ")[1] == term:
+            if ln.__contains__(" |  ") and ln.split(" |  ")[1]:
+                if ln.split(" |  ")[1].__contains__(" "):
+                    for one_term in ln.split(" |  ")[1].split(" "):
+                        for stem_term in all_qry_terms:
+                            if one_term == stem_term and term_match[stem_term] == 1:
                                 set_of_terms.append(ln.split(" |  ")[0])
-                                term_match[term] = 0
+                                term_match[stem_term] = 0
+                                break
+                else:
+                    if ln.split(" |  ")[1] == stem_term:
+                        set_of_terms.append(ln.split(" |  ")[0])
+                        term_match[stem_term] = 0
 
-    for term in term_match:
-        if term_match[term] == 1:
-            set_of_terms.append(term)
+    for stem_term in term_match:
+        if term_match[stem_term] == 1:
+            set_of_terms.append(stem_term)
 
     return set_of_terms
 
@@ -45,43 +42,33 @@ if __name__ == '__main__':
     doc_count = es.cat.indices(index=constants.INDEX_NAME).split()[5]
 
     okapi_tf_output = open(constants.OUTPUT_DIRECTORY + 'okapi-tf_results.txt', 'w')
-    avg_doc_len = get_doc_stats(constants.AVERAGE_DOC_LENGTH_IDENTIFIER, start)
-    dic = load_length_in_dic(start)
+    avg_doc_len = helper.get_doc_stats(constants.AVERAGE_DOC_LENGTH_IDENTIFIER, start)
+    dic = helper.load_length_in_dic(start)
 
     with open(constants.QUERIES_TEXT_FILE) as queries:
         for line in iter(queries):
             if line.__contains__("."):
-                query = get_query(line.lower())
-                query_no = line.lower().split(".   ")[0]
+                query = helper.get_query(line.lower())
 
-                all_terms = get_all_terms(query, start)
+                all_terms = helper.get_all_terms(query, start)
                 terms = stem_query_default_stemmer(all_terms)
 
-                dict_okapi_tf = {}
-                dict_okapi_tf_sorted = {}
+                okapi_tf_dictionary = {}
 
-                for stem in terms:
-                    results = get_term_freq_all(es, stem, doc_count, 0.009)
+                for term in terms:
+                    results = helper.get_term_freq_all(es, term, doc_count, 0.009)
                     for doc in results['hits']['hits']:
                         doc_tf = 0
                         doc_id = str(doc['_id'])
                         tf = int(doc['_score'])
-                        doc_length = int(dic[doc_id])
-                        doc_tf += (tf / (tf + 0.5 + (1.5 * (doc_length/avg_doc_len))))
+                        doc_tf += (tf / (tf + 0.5 + (1.5 * (int(dic[doc_id])/avg_doc_len))))
 
-                        if doc_tf > 0.0:
-                            if doc_id in dict_okapi_tf:
-                                dict_okapi_tf[doc_id] += doc_tf
-                            else:
-                                dict_okapi_tf[doc_id] = doc_tf
-                dict_okapi_tf_sorted = sorted(dict_okapi_tf.items(), key=lambda x: x[1], reverse=True)[:1000]
+                        if doc_id in okapi_tf_dictionary:
+                            okapi_tf_dictionary[doc_id] += doc_tf
+                        else:
+                            okapi_tf_dictionary[doc_id] = doc_tf
 
-                rank = 1
-                lines = []
-                for doc in dict_okapi_tf_sorted:
-                    lines.append(str(query_no) + ' Q0 ' + doc[0] + ' ' + str(rank) + ' ' + str(doc[1]) + ' Exp\n')
-                    rank += 1
-                okapi_tf_output.writelines(lines)
+                helper.write_result_to_file(okapi_tf_dictionary, line.lower().split(".   ")[0], okapi_tf_output)
 
     okapi_tf_output.close()
     print datetime.now() - start

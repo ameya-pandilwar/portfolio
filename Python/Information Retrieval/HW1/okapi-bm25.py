@@ -1,11 +1,10 @@
 __author__ = 'Ameya'
 
+import helper
 import constants
 from math import log
 from datetime import datetime
 from elasticsearch import Elasticsearch
-from helper import get_term_freq_all, get_all_terms, get_query, get_doc_stats, load_length_in_dic, query_custom_stem
-
 
 if __name__ == '__main__':
     es = Elasticsearch(constants.CLIENT, timeout=600, max_retries=10, revival_delay=0)
@@ -13,33 +12,32 @@ if __name__ == '__main__':
     doc_count = es.cat.indices(index=constants.INDEX_NAME).split()[5]
 
     okapi_bm25_output = open(constants.OUTPUT_DIRECTORY + 'okapi-bm25_results.txt', 'w')
-    avg_doc_len = get_doc_stats(constants.AVERAGE_DOC_LENGTH_IDENTIFIER, start)
-    dic = load_length_in_dic(start)
+    avg_doc_len = helper.get_doc_stats(constants.AVERAGE_DOC_LENGTH_IDENTIFIER, start)
+    dic = helper.load_length_in_dic(start)
 
     with open(constants.QUERIES_TEXT_FILE) as queries:
         for line in iter(queries):
             if line.__contains__("."):
-                query = get_query(line.lower())
+                query = helper.get_query(line.lower())
                 query_no = line.lower().split(".   ")[0]
 
-                all_terms = get_all_terms(query, start)
-                terms = query_custom_stem(all_terms)
+                all_terms = helper.get_all_terms(query, start)
+                terms = helper.query_custom_stem(all_terms)
 
                 dict_okapi_bm25 = {}
-                dict_okapi_bm25_sorted = {}
 
                 tf_query = {}
-                for stem in terms:
-                    if tf_query.__contains__(stem):
-                            tf_query[stem] += 1
+                for term in terms:
+                    if tf_query.__contains__(term):
+                        tf_query[term] += 1
                     else:
-                        tf_query[stem] = 1
+                        tf_query[term] = 1
 
-                for stem in terms:
+                for term in terms:
                     dfw = 0
                     t_bm25 = 0
-                    tf_q = tf_query[stem]
-                    result = get_term_freq_all(es, stem, doc_count, 0.009)
+                    tf_q = tf_query[term]
+                    result = helper.get_term_freq_all(es, term, doc_count, 0.009)
                     dfw = result['hits']['total']
                     for doc in result['hits']['hits']:
                         doc_id = str(doc['_id'])
@@ -56,17 +54,7 @@ if __name__ == '__main__':
                             else:
                                 dict_okapi_bm25[doc_id] = t_bm25
 
-                if dict_okapi_bm25.__len__() > 1000:
-                    dict_okapi_bm25_sorted = sorted(dict_okapi_bm25.items(), key=lambda x: x[1], reverse=True)[:1000]
-                else:
-                    dict_okapi_bm25_sorted = sorted(dict_okapi_bm25.items(), key=lambda x: x[1], reverse=True)
-
-                rank = 1
-                lines = []
-                for doc in dict_okapi_bm25_sorted:
-                    lines.append(str(query_no) + " Q0 " + doc[0] + " " + str(rank) + " " + str(doc[1]) + " Exp\n")
-                    rank += 1
-                okapi_bm25_output.writelines(lines)
+                helper.write_result_to_file(dict_okapi_bm25, query_no, okapi_bm25_output)
 
     okapi_bm25_output.close()
     print datetime.now() - start
