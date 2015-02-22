@@ -14,7 +14,7 @@ put_settings_body = {
             "analyzer": {
                 "ameya_analyzer": {
                     "type": "english",
-                    "stopwords_path": "../../AP89_DATA/AP_DATA/stoplist.txt"
+                    "stopwords_path": "../../../AP_DATA/stoplist.txt"
                 }
             }
         }

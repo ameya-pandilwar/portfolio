@@ -76,8 +76,7 @@ public class CommunicationMain extends Activity implements OnClickListener {
 	}
 
 	private SharedPreferences getGCMPreferences(Context context) {
-		return getSharedPreferences(CommunicationMain.class.getSimpleName(),
-				Context.MODE_PRIVATE);
+		return getSharedPreferences(CommunicationMain.class.getSimpleName(), Context.MODE_PRIVATE);
 	}
 
 	private static int getAppVersion(Context context) {
@@ -156,8 +155,7 @@ public class CommunicationMain extends Activity implements OnClickListener {
 	}
 
 	private boolean checkPlayServices() {
-		int resultCode = GooglePlayServicesUtil
-				.isGooglePlayServicesAvailable(this);
+		int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
 		if (resultCode != ConnectionResult.SUCCESS) {
 			if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
 				GooglePlayServicesUtil.getErrorDialog(resultCode, this,
