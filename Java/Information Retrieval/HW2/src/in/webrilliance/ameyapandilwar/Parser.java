@@ -26,7 +26,6 @@ public class Parser {
 			
 			if (i%25==0) {
 				System.out.println(Tokenizer.termMap.size());
-//				Parser.writeHashMapInFile(counter++);
 				ParserThreaded threaded = new ParserThreaded(String.valueOf(counter++), new TreeMap<String, List<Dblock>>(Tokenizer.termMap));
 				threaded.start();
 				reinitializeHashMap();
@@ -68,7 +67,7 @@ public class Parser {
 			Set<String> keys = map.keySet();
 			for (String key : keys) {
 				String content = getContent(map.get(key));
-				bw.write(key+"-"+content+"\n");
+				bw.write(key+"="+content+"\n");
 			}
 			
 			bw.close();

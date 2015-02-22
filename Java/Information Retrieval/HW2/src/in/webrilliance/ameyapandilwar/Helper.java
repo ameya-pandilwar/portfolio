@@ -57,19 +57,26 @@ public class Helper {
 	public static void mergeFilesIntoOne() {
 		String OUTPUT_DIR = "C:\\Users\\Ameya\\Desktop\\outputHW2\\";
 		File directory = new File(OUTPUT_DIR);
-		String[] files = directory.list();
-		for (String file : files) {
-			System.out.println(file);
-		}
-
-		String f1 = OUTPUT_DIR + files[0];
-		String f2 = OUTPUT_DIR + files[1];
-
-		try {
-			File file = new File(OUTPUT_DIR + "merge.txt");
-			if (!file.exists()) {
-				file.createNewFile();
+		
+		int n = 30;
+		do {
+			String[] files = directory.list();
+			for (String file : files) {
+				System.out.println(file);
 			}
+	
+			String f1 = OUTPUT_DIR + files[0];
+			String f2 = OUTPUT_DIR + files[1];
+	
+			mergeTwoFiles(f1, f2, n++);
+		} while(directory.list().length != 1);
+	}
+
+	private static void mergeTwoFiles(String f1, String f2, int n) {
+		long sTime = System.currentTimeMillis();
+		String OUTPUT_DIR = "C:\\Users\\Ameya\\Desktop\\outputHW2\\";
+		try {
+			File file = new File(OUTPUT_DIR + "tmerged" + n + ".txt");
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
 			BufferedWriter bw = new BufferedWriter(fw);
 
@@ -83,36 +90,36 @@ public class Helper {
 				if (f1Line == null || f2Line == null) {
 					if (f1Line == null && f2Line != null) {
 						f1Word = "";
-						f2Word = f2Line.split("-")[0];
+						f2Word = f2Line.split("=")[0];
 					} else if (f2Line == null && f1Line != null) {
-						f1Word = f1Line.split("-")[0];
+						f1Word = f1Line.split("=")[0];
 						f2Word = "";
 					} else {
 						break;
 					}
 				} else {
-					f1Word = f1Line.split("-")[0];
-					f2Word = f2Line.split("-")[0];
+					f1Word = f1Line.split("=")[0];
+					f2Word = f2Line.split("=")[0];
 				}
 
 				if (f1Word.compareTo(f2Word) == 0) {
-					bw.write(f1Word + " = " + f2Word + "\n");
+					bw.write(f1Word + "=" + f1Line.split("=")[1] + f2Line.split("=")[1] + "\n");
 					f1Line = f1Br.readLine();
 					f2Line = f2Br.readLine();
 				} else if (f1Word.compareTo(f2Word) > 0) {
-//					bw.write(f2Word + "\n");
-					bw.write(f1Word + " > " + f2Word + "\n");
 					if (!f2Word.equalsIgnoreCase("")) {
+						bw.write(f2Line + "\n");
 						f2Line = f2Br.readLine();
 					} else {
+						bw.write(f1Line + "\n");
 						f1Line = f1Br.readLine();
 					}
 				} else if (f1Word.compareTo(f2Word) < 0) {
-//					bw.write(f1Word + "\n");
-					bw.write(f1Word + " < " + f2Word + "\n");
 					if (!f1Word.equalsIgnoreCase("")) {
+						bw.write(f1Line + "\n");
 						f1Line = f1Br.readLine();
 					} else {
+						bw.write(f2Line + "\n");
 						f2Line = f2Br.readLine();
 					}
 				}
@@ -126,7 +133,11 @@ public class Helper {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		File f1File = new File(f1);
+		f1File.delete();
+		File f2File = new File(f2);
+		f2File.delete();
+		System.out.println("time taken to merge: " +f1+" & "+f2+" is :: " + String.valueOf(System.currentTimeMillis() - sTime));
 	}
 
 }
