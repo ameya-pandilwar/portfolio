@@ -20,7 +20,7 @@ public class Parser {
 		Tokenizer.loadStoplist();
 		Tokenizer.loadStemmerWords();
 		
-		int counter = 1;
+		int counter = 10;
 		for (int i=0; i<files.length; i++) {
 			Helper.storeDocNoTextFromFileInHashMap(Constants.DATA_DIRECTORY + "\\" + files[i]);
 			
@@ -40,7 +40,10 @@ public class Parser {
 		System.out.println(Tokenizer.termMap.size());
 
 		long endTime = System.currentTimeMillis();
-		System.err.println("total time taken :: " + (endTime - startTime));
+		System.err.println("total time taken to write files :: " + (endTime - startTime));
+		System.out.println("--------====-------== starting merging");
+		
+		Helper.mergeFilesIntoOne();
 
 		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println("The time taken is to process " + files.length + " files is " + df.format((endTime - startTime) / 60000.0) + " minutes");
