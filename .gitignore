@@ -19,3 +19,8 @@ Java/*.metadata
 Java/*/*.classpath
 Java/*/*.project
 Java/*/*.settings
+
+# LeetCode
+LeetCode/.idea/
+LeetCode/LeetCode.iml
+LeetCode/out/
