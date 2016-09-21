@@ -9,9 +9,7 @@ package me.ameyapandilwar;
  * Find how many bulbs are on after n rounds.
  *
  * https://leetcode.com/problems/bulb-switcher/
- */
-
-/**
+ *
  * Created by ameyapandilwar on 9/10/16.
  */
 public class BulbSwitcher {

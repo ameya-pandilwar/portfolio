@@ -1,5 +1,8 @@
 package me.ameyapandilwar;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 3. Longest Substring Without Repeating Characters
  *
@@ -15,12 +18,7 @@ package me.ameyapandilwar;
  * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  *
  * https://leetcode.com/articles/longest-substring-without-repeating-characters/
- */
-
-import java.util.HashSet;
-import java.util.Set;
-
-/**
+ *
  * Created by ameyapandilwar on 9/10/16.
  */
 public class LongestSubstringWithoutRepeatingCharacters {

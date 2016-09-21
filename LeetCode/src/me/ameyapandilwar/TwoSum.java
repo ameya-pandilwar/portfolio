@@ -1,5 +1,9 @@
 package me.ameyapandilwar;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 1. Two Sum
  *
@@ -15,13 +19,7 @@ package me.ameyapandilwar;
  * return [0, 1].
  *
  * https://leetcode.com/articles/two-sum/
- */
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-/**
+ *
  * Created by ameyapandilwar on 9/10/16.
  */
 public class TwoSum {
